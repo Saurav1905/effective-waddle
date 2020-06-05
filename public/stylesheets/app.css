@@ -1,0 +1,10 @@
+.mdl-grid {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  min-height: 60vh;
+  align-items: center;
+}

@@ -33,15 +33,29 @@ const Blog = mongoose.model("blog", blogSchema);
 app.get("/", (req, res) => {
   res.redirect("/blogs");
 });
+// Index Routes
 app.get("/blogs", async (req, res) => {
   try {
     const blogs = await Blog.find();
-    res.render("index", { blogs });
+    res.render("index", { blogs: blogs });
   } catch (error) {
     console.error("routing in Blogs", error);
   }
 });
+// New Form
+app.get("/blogs/new", (req, res) => {
+  res.render("new");
+});
 
+// Create
+app.post("/blogs", async (req, res) => {
+  try {
+    await Blog.create(req.body.blog);
+    res.redirect("/blogs");
+  } catch (error) {
+    console.error("Create new blog", error);
+  }
+});
 const port = 5000;
 app.listen(5000, function () {
   console.log(`http://localhost:${port}`);

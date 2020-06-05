@@ -1,1 +1,78 @@
-<h1>Index</h1>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NBA BLOGS</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
+
+    <style>
+      .demo-layout-transparent .mdl-layout__header,
+      .demo-layout-transparent .mdl-layout__drawer-button {
+        /* This background is dark, so we set text to white. Use 87% black instead if
+               your background is light. */
+        color: white;
+        background-color: #17408b;
+      }
+      .mdl-layout__drawer {
+        background-color: #17408b;
+        color: white;
+      }
+
+      .mdl-layout__drawer a {
+        color: white !important;
+      }
+      .mdl-button {
+        position: fixed;
+        bottom: 5vh;
+        right: 5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Accent-colored raised button with ripple -->
+    <div class="demo-layout-transparent mdl-layout mdl-js-layout">
+      <header class="mdl-layout__header mdl-layout__header--transparent">
+        <div class="mdl-layout__header-row">
+          <!-- Title -->
+          <span class="mdl-layout-title">Nba</span>
+          <!-- Add spacer, to align navigation to the right -->
+          <div class="mdl-layout-spacer"></div>
+          <!-- Navigation -->
+          <nav class="mdl-navigation">
+            <a
+              class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
+              href="/blogs/new"
+            >
+              <i class="material-icons">add</i>
+            </a>
+          </nav>
+        </div>
+      </header>
+      <div class="mdl-layout__drawer">
+        <span class="mdl-layout-title">NBA NEWS</span>
+        <nav class="mdl-navigation">
+          <a class="mdl-navigation__link" href="/">Home</a>
+          <a class="mdl-navigation__link" href="">Nba Stats</a>
+          <a class="mdl-navigation__link" href="">Upcoming Matches</a>
+          <a class="mdl-navigation__link" href="">Transfer News</a>
+        </nav>
+      </div>
+      <main class="mdl-layout__content">
+        <% blogs.forEach(blog => { %>
+        <div class="mdl-grid">
+          <h1><%= blog.title %></h1>
+        </div>
+        <% }); %>
+      </main>
+    </div>
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  </body>
+</html>
