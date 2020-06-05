@@ -30,14 +30,19 @@ const blogSchema = new mongoose.Schema({
 const Blog = mongoose.model("blog", blogSchema);
 
 // Routes
-Blog.create({
-  title: "NBA owners, executives feeling hopeful for return of season",
-  image:
-    "https://cdn.vox-cdn.com/thumbor/vMb6EjjbZ0uN3NwBLN3UegRGRto=/0x0:2943x1962/920x613/filters:focal(1224x119:1694x589):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/66790111/1206534537.jpg.0.jpg",
-  body:
-    "It should go without saying that it’s critical the NBA doesn’t try to rush the return of games. There are so many important factors besides just the health of players and team personnel, who shouldn’t be returning before it’s completely safe to do so (for instance, the league also needs to consider the wellbeing of families, the availability of tests, and what effects coronavirus could have on someone after they’ve had it).",
+app.get("/", (req, res) => {
+  res.redirect("/blogs");
+});
+app.get("/blogs", async (req, res) => {
+  try {
+    const blogs = await Blog.find();
+    res.render("index", { blogs });
+  } catch (error) {
+    console.error("routing in Blogs", error);
+  }
 });
 
-app.listen(process.env.PORT, process.env.IP, function () {
-  console.log("Blog Running...");
+const port = 5000;
+app.listen(5000, function () {
+  console.log(`http://localhost:${port}`);
 });
