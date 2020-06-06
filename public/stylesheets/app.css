@@ -20,10 +20,10 @@
   text-align: justify;
   padding: 5%;
 }
-.container h1,
+.container h2,
 .time,
 .body {
-  width: 50vw;
+  width: 70vw;
 }
 .body,
 .time {

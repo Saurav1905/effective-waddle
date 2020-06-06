@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog</title>
+    <link
+      rel="stylesheet"
+      href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css"
+    />
     <link rel="stylesheet" href="/stylesheets/app.css" />
   </head>
   <body>
     <div class="container">
+      <a
+        href="/blogs "
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+        >Back</a
+      >
       <h2><%= blog.title %></h2>
       <div class="img">
         <img src="<%= blog.image %> " />
@@ -16,6 +25,13 @@
       <div class="body">
         <%= blog.body %>
       </div>
+
+      <a
+        style="margin-top: 4%;"
+        href="/blogs/<%= blog._id %>/edit "
+        class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored"
+        >Edit</a
+      >
     </div>
   </body>
 </html>
