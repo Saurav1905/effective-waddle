@@ -12,6 +12,23 @@
   display: flex;
   justify-content: space-around;
 }
-.mdl-cell-6-col {
-  min-height: 50vh;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: justify;
+  padding: 5%;
+}
+.container h1,
+.time,
+.body {
+  width: 50vw;
+}
+.body,
+.time {
+  padding-top: 5%;
+}
+.body {
+  font-size: larger;
 }

@@ -56,6 +56,16 @@ app.post("/blogs", async (req, res) => {
     console.error("Create new blog", error);
   }
 });
+// Show Route
+app.get("/blogs/:id", async (req, res) => {
+  try {
+    const blog = await Blog.findById(req.params.id);
+    res.render("blogPage", { blog: blog });
+  } catch (error) {
+    res.redirect("/blogs");
+    console.log("BlogPage Error", error);
+  }
+});
 const port = 5000;
 app.listen(5000, function () {
   console.log(`http://localhost:${port}`);

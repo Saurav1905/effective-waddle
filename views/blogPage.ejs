@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog</title>
+    <link rel="stylesheet" href="/stylesheets/app.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h2><%= blog.title %></h2>
+      <div class="img">
+        <img src="<%= blog.image %> " />
+      </div>
+      <span class="timestamp"> <%= blog.created.toDateString() %> </span>
+      <div class="body">
+        <%= blog.body %>
+      </div>
+    </div>
+  </body>
+</html>

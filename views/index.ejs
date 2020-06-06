@@ -94,13 +94,14 @@
               <h2 class="mdl-card__title-text"><%= blog.title %></h2>
             </div>
             <div class="mdl-card__supporting-text">
-              <%= blog.body %>
+              <%= blog.body.substring(0,150) %>...
             </div>
             <div class="mdl-card__actions mdl-card--border">
               <a
+                href="/blogs/<%= blog._id %> "
                 class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
               >
-                Get Started
+                Show News
               </a>
             </div>
             <div class="mdl-card__menu">
