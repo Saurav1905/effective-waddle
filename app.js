@@ -81,6 +81,11 @@ app.put("/blogs/:id", async (req, res) => {
     console.log("Editing Error", error);
   }
 });
+// delete
+app.delete("/blogs/:id", async (req, res) => {
+  await Blog.findByIdAndRemove(req.params.id);
+  res.redirect("/blogs");
+});
 const port = 5000;
 app.listen(5000, function () {
   console.log(`http://localhost:${port}`);
